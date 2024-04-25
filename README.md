@@ -27,21 +27,21 @@ Power Query Editor in Power BI is a powerful tool for data cleaning and transfor
 5) Create a Date Table
 To work with Data Analysis Expressions (DAX) time intelligence functions, there’s a prerequisite model requirement. One date table created and extracted month, month name, year, year-month.
 Codes :-
-     >>date = CALENDAR(MIN('Amazon Sales data'[Order_date]),MAX('Amazon Sales data'[Order_date]))
-     >>Month = MONTH('date'[Date])
-     >>Year = YEAR('date'[Date])
-     >>Month_year = FORMAT('date'[Date],"mmm-yyyy")
-     >>Month_name = FORMAT('date'[Date],"mmm")
+     a). date = CALENDAR(MIN('Amazon Sales data'[Order_date]),MAX('Amazon Sales data'[Order_date]))
+     b). Month = MONTH('date'[Date])
+     c). Year = YEAR('date'[Date])
+     d). Month_year = FORMAT('date'[Date],"mmm-yyyy")
+     e). Month_name = FORMAT('date'[Date],"mmm")
 
 6) Create Data Model in Power BI Desktop
 Design and create a data model that represents the relationships between different tables in your data. Establish proper relationships, define keys, and establish hierarchies if needed. This step is crucial for accurate analysis and visualization
 
 7) Develop Reports in Power BI Desktop
 Use the Power BI Desktop application to create reports based on your data model. Add visualizations such as charts, tables, and maps to represent the data effectively. Apply filters, slicers, and drill-through functionalities to allow users to interact with the data.
->>took Report Background color from color_hex (website)
->>Create Slicers – Date, region, Product, and Channel
->>Create Dax measures
->>Create Visuals:
+-took Report Background color from color_hex (website)
+-Create Slicers – Date, region, Product, and Channel
+-Create Dax measures
+-Create Visuals:
 1) Sales By Product and Comparing it with last year’s Sales.
 2) Sales By Month and Comparing it with last year’s Sales.
 3) Sales of top 5 countries.
@@ -64,19 +64,19 @@ Sales vs PY = [Total_sales]-[Total_Sales_LY]
 //Percentage Increase or Decrease in sales year on year (YOY%)
 Sales vs PY% = DIVIDE([Sales vs PY],[Total_sales],0)
 
->> Total_Units = SUM('Amazon Sales data'[Units Sold])
->> Total_profit = SUM('Amazon Sales data'[Total Profit]) 
->> Profit LY = CALCULATE([Total_profit],SAMEPERIODLASTYEAR('date'[Date]))
->> Profit Vs LY = [Total_Profit]- [Profit LY]
->> Profit vs LY % = [Profit Vs LY]/[Total_Profit]
->> Profit Margin = DIVIDE([Profit],[Sales],0)
->> Total_cost = SUM('Amazon Sales data'[Total Cost])
+1. Total_Units = SUM('Amazon Sales data'[Units Sold])
+2 Total_profit = SUM('Amazon Sales data'[Total Profit]) 
+3. Profit LY = CALCULATE([Total_profit],SAMEPERIODLASTYEAR('date'[Date]))
+4. Profit Vs LY = [Total_Profit]- [Profit LY]
+5. Profit vs LY % = [Profit Vs LY]/[Total_Profit]
+6. Profit Margin = DIVIDE([Profit],[Sales],0)
+7. Total_cost = SUM('Amazon Sales data'[Total Cost])
 
 
 Conclusion of Power BI Amazon Sales Dashboard Project:-
 
 From the Year 2010 to 2017 :-
-   >> Total sales, profit, cost, Average order value and units sold gradually decreased.
-   >> Total sales by Month_year wise fluctuated continuously throughout the period
-   >> Profit, Profit margin, units sold by channel also decreased
-   >> We can observe some profit fluctuation by order priority.
+   1. Total sales, profit, cost, Average order value and units sold gradually decreased.
+   2. Total sales by Month_year wise fluctuated continuously throughout the period
+   3. Profit, Profit margin, units sold by channel also decreased
+   4. We can observe some profit fluctuation by order priority.
